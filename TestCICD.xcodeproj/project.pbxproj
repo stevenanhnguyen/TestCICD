@@ -13,6 +13,7 @@
 		A5462F962A5FB2970097D7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5462F942A5FB2970097D7B9 /* Main.storyboard */; };
 		A5462F982A5FB2980097D7B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5462F972A5FB2980097D7B9 /* Assets.xcassets */; };
 		A5462F9B2A5FB2980097D7B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5462F992A5FB2980097D7B9 /* LaunchScreen.storyboard */; };
+		CF40CC11A89E0979CA31D668 /* Pods_TestCICD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D645ADFF7751E53C16BE9A9E /* Pods_TestCICD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		A5462F972A5FB2980097D7B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5462F9A2A5FB2980097D7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5462F9C2A5FB2980097D7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D645ADFF7751E53C16BE9A9E /* Pods_TestCICD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestCICD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E879DDA6F07692EA01AC7A6E /* Pods-TestCICD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCICD.debug.xcconfig"; path = "Target Support Files/Pods-TestCICD/Pods-TestCICD.debug.xcconfig"; sourceTree = "<group>"; };
+		F85736A5FE42B74588DF09AF /* Pods-TestCICD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCICD.release.xcconfig"; path = "Target Support Files/Pods-TestCICD/Pods-TestCICD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF40CC11A89E0979CA31D668 /* Pods_TestCICD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45F0482100C072DC69D897B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E879DDA6F07692EA01AC7A6E /* Pods-TestCICD.debug.xcconfig */,
+				F85736A5FE42B74588DF09AF /* Pods-TestCICD.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A5462F822A5FB2970097D7B9 = {
 			isa = PBXGroup;
 			children = (
 				A5462F8D2A5FB2970097D7B9 /* TestCICD */,
 				A5462F8C2A5FB2970097D7B9 /* Products */,
+				45F0482100C072DC69D897B8 /* Pods */,
+				D09D5F53C0D6184C408D51C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +83,14 @@
 			path = TestCICD;
 			sourceTree = "<group>";
 		};
+		D09D5F53C0D6184C408D51C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D645ADFF7751E53C16BE9A9E /* Pods_TestCICD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5462F9F2A5FB2980097D7B9 /* Build configuration list for PBXNativeTarget "TestCICD" */;
 			buildPhases = (
+				17F1A471A1629D50DAE78EB1 /* [CP] Check Pods Manifest.lock */,
 				A5462F872A5FB2970097D7B9 /* Sources */,
 				A5462F882A5FB2970097D7B9 /* Frameworks */,
 				A5462F892A5FB2970097D7B9 /* Resources */,
@@ -132,6 +157,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17F1A471A1629D50DAE78EB1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestCICD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A5462F872A5FB2970097D7B9 /* Sources */ = {
@@ -282,11 +332,14 @@
 		};
 		A5462FA02A5FB2980097D7B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E879DDA6F07692EA01AC7A6E /* Pods-TestCICD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 38BU5VXKD8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestCICD/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -294,6 +347,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +355,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk1technology.TestCICD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,11 +364,14 @@
 		};
 		A5462FA12A5FB2980097D7B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F85736A5FE42B74588DF09AF /* Pods-TestCICD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 38BU5VXKD8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestCICD/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -321,6 +379,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +387,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk1technology.TestCICD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
